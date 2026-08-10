@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi;
+
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,18 +22,21 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-// CORS
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.WithOrigins(
+    "[http://localhost:3000](http://localhost:3000)",
+    "[https://employee-management-woad-mu.vercel.app](https://employee-management-woad-mu.vercel.app)"
+)
+        .AllowAnyHeader()
+        .AllowAnyMethod();
     });
 });
 
-// JWT
+
 var jwtKey = builder.Configuration["Jwt:Key"]!;
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
