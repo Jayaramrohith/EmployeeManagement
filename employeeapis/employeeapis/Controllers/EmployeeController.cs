@@ -69,7 +69,7 @@ public class EmployeeController : ControllerBase
     /// <summary>
     /// Create a new employee.
     /// </summary>
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrator")]
     [HttpPost]
     [ProducesResponseType(typeof(ApiResponse<EmployeeResponseDto>), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -98,7 +98,7 @@ public class EmployeeController : ControllerBase
     /// <summary>
     /// Update an existing employee.
     /// </summary>
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrator")]
     [HttpPut("{id:int}")]
     [ProducesResponseType(typeof(ApiResponse<EmployeeResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -126,7 +126,7 @@ public class EmployeeController : ControllerBase
     /// <summary>
     /// Delete an employee.
     /// </summary>
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrator")]
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]

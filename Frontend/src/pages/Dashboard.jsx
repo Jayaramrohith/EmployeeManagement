@@ -14,21 +14,20 @@ const [error, setError] = useState('');
 const location = useLocation();
 
 const fetchEmployees = async () => {
-try {
-setLoading(true);
-setError('');
+  try {
+    setLoading(true);
+    setError("");
 
+    const result = await getEmployees();
 
-  const list = await getEmployees();
-  setEmployees(Array.isArray(list) ? list : []);
-} catch (err) {
-  setError(getErrorMessage(err));
-  setEmployees([]);
-} finally {
-  setLoading(false);
-}
-
-
+    // result = { items: [...], totalCount: 4, ... }
+    setEmployees(result.items || []);
+  } catch (err) {
+    setError(getErrorMessage(err));
+    setEmployees([]);
+  } finally {
+    setLoading(false);
+  }
 };
 
 useEffect(() => {
