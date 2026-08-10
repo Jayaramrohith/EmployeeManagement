@@ -28,9 +28,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy("ReactPolicy", policy =>
     {
         policy.WithOrigins(
-    "[http://localhost:3000](http://localhost:3000)",
-    "[https://employee-management-woad-mu.vercel.app](https://employee-management-woad-mu.vercel.app)"
-)
+            "http://localhost:3000",
+            "https://employee-management-woad-mu.vercel.app"
+        )
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
