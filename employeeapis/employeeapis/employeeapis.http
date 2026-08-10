@@ -1,0 +1,38 @@
+@employeeapis_HostAddress = http://localhost:5057
+
+### Get all employees (paginated, search, sort)
+GET {{employeeapis_HostAddress}}/api/employee?pageNumber=1&pageSize=10&sortBy=name&sortOrder=asc
+Accept: application/json
+
+### Search employees by name and department
+GET {{employeeapis_HostAddress}}/api/employee?searchName=John&searchDepartment=Engineering&sortBy=salary&sortOrder=desc
+Accept: application/json
+
+### Get employee by id
+GET {{employeeapis_HostAddress}}/api/employee/1
+Accept: application/json
+
+### Create employee
+POST {{employeeapis_HostAddress}}/api/employee
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "department": "Engineering",
+  "salary": 75000.00
+}
+
+### Update employee
+PUT {{employeeapis_HostAddress}}/api/employee/1
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "department": "IT",
+  "salary": 80000.00
+}
+
+### Delete employee
+DELETE {{employeeapis_HostAddress}}/api/employee/1

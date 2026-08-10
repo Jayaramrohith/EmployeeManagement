@@ -1,0 +1,6 @@
+.vs/ 
+employeeapis/.vs/ 
+**/.vs/ 
+node_modules/ 
+**/bin/ 
+**/obj/ 
