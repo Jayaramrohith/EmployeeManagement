@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://localhost:7257/api/Auth';
+const API_URL = "https://employee-api-rohith-c0b4e8bfhjgkh8cn.centralindia-01.azurewebsites.net/api/Auth";
 
 export const login = async (email, password) => {
 const response = await axios.post(`${API_URL}/login`, {
