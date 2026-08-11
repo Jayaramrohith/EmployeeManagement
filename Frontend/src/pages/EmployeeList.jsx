@@ -23,8 +23,8 @@ const [deleteTarget, setDeleteTarget] = useState(null);
 const [deleteLoading, setDeleteLoading] = useState(false);
 const [successMessage, setSuccessMessage] = useState('');
 
-const user = JSON.parse(localStorage.getItem('user') || 'null');
-const isAdmin = user?.role === 'Admin';
+const user = JSON.parse(localStorage.getItem("user") || "{}");
+const isAdmin = user.role === "Administrator";
 
 const fetchEmployees = async () => {
 try {

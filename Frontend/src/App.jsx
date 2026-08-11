@@ -1,14 +1,14 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './components/layout/Layout';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import EmployeeList from './pages/EmployeeList';
-import AddEmployee from './pages/AddEmployee';
-import EditEmployee from './pages/EditEmployee';
-import NotFound from './pages/NotFound';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import EmployeeList from "./pages/EmployeeList";
+import AddEmployee from "./pages/AddEmployee";
+import EditEmployee from "./pages/EditEmployee";
+import NotFound from "./pages/NotFound";
 
 function ProtectedRoute({ children }) {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   return token ? children : <Navigate to="/login" replace />;
 }
 

@@ -29,7 +29,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
             "http://localhost:3000",
-            "https://employee-management-woad-mu.vercel.app"
+           "https://calm-river-0a6a2a710.7.azurestaticapps.net"
         )
         .AllowAnyHeader()
         .AllowAnyMethod();
